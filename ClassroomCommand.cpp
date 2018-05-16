@@ -49,11 +49,11 @@ public:
     }
 };
 
-class Teacher {
+class SecurityPersonnel {
     Command* lock;
     Command* unlock;
 public:
-    Teacher(Command* lock, Command* unlock){
+    SecurityPersonnel(Command* lock, Command* unlock){
         this->lock=lock;
         this->unlock=unlock;
     };
@@ -72,8 +72,8 @@ int main() {
     Command *command2 = nullptr;
     command1 = new ClassroomLockCommand(m101);
     command2 = new ClassroomUnlockCommand(m101);
-    Teacher *teacher = new Teacher(command1, command2);
-    teacher->lockClass();
-    teacher->unlockClass();
+    SecurityPersonnel *securityPersonnel = new SecurityPersonnel(command1, command2);
+    securityPersonnel->lockClass();
+    securityPersonnel->unlockClass();
 
 }
